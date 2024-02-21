@@ -57,10 +57,10 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     ordered: (state) => {
-      state.numOfIcecream--;
+      // state.numOfIcecream--;
     },
     restocked: (state, action: PayloadAction<number>) => {
-      state.numOfIcecream += action.payload;
+      // state.numOfIcecream += action.payload;
     },
   },
   extraReducers: (builder) => {
