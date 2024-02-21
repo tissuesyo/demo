@@ -18,7 +18,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@tmc/const": ["const/index.ts"],
+      "@tmc/components/*": ["components/*"],
+      "@tmc/model/*": ["model/*"],
+      "@tmc/utils/*": ["utils/*"]
+    }
   },
   "include": [
     "src"

@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding: 0px 16px;
+}
+
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-header-text {
+  font-weight: bold;
+}
+
+.ant-collapse-item {
+  margin-bottom: 15px;
+}
+
+.ant-tag {
+  padding-inline: 12px;
+}
+
+.ant-descriptions.ant-descriptions-bordered.ant-descriptions-small
+  .ant-descriptions-row
+  > .ant-descriptions-item-label,
+:where(.css-dev-only-do-not-override-2rgkd4).ant-descriptions.ant-descriptions-bordered.ant-descriptions-small
+  .ant-descriptions-row
+  > .ant-descriptions-item-content {
+  padding: 4px 16px;
+}
+
+.ant-list-bordered {
+  border: none;
+}
+
+.ant-collapse-large
+  > .ant-collapse-item
+  > .ant-collapse-content
+  > .ant-collapse-content-box {
+  padding: 0px;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.remark-word {
+  color: #000000a6;
+}
+
+.mg-top-xs {
+  margin-top: 5px;
+}
+
+.mg-right-xs {
+  margin-right: 5px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
