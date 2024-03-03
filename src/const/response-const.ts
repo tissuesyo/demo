@@ -93,3 +93,48 @@ export const CHANGED_CONFIGS_RESP = [
     updatedXpath: '/config/TCS/Tools/Tool/@isXXXX~~N(;;)',
   },
 ];
+
+export const CONFIG_XML_DIFF_RESP = {
+  oldXml: `
+  <library>
+    <book>
+      <title>Introduction to XML</title>
+      <author>John Doe</author>
+      <publication_year>2022</publication_year>
+    </book>
+
+    <book>
+      <title>HTML Basics</title>
+      <author>Jane Smith</author>
+      <publication_year>2021</publication_year>
+    </book>
+
+    <book>
+      <title>CSS Essentials</title>
+      <author>Bob Johnson</author>
+      <publication_year>2023</publication_year>
+    </book>
+  </library>
+`,
+  newXml: `
+  <library>
+    <book>
+      <title>Introduction to XML</title>
+      <author>John Doe</author>
+      <publication_year>2023</publication_year>
+    </book>
+
+    <book>
+      <title>HTML Basics</title>
+      <author>Tissue</author>
+      <publication_year>2021</publication_year>
+    </book>
+
+    <book>
+      <title>CSS Essentials</title>
+      <author>Bob Johnson</author>
+      <publication_year>2023</publication_year>
+    </book>
+  </library>
+`,
+};

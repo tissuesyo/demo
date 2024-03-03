@@ -19,7 +19,7 @@ const ConfigInformation: React.FC = () => {
 
   return (
     <div className="column-container">
-      <div className="flex">
+      <div className="flex items-center">
         <Select
           mode="tags"
           style={{ width: '30%', maxWidth: '200px' }}

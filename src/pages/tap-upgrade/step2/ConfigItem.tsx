@@ -9,20 +9,20 @@ const ConfigItem: React.FC<ConfigItemProps> = ({
   xpath,
   ...restProps
 }) => (
-  <div className="flex" style={{ width: '100%' }}>
+  <div className="flex items-center" style={{ width: '100%' }}>
     <div className="column-container" style={{ width: '70%' }}>
       <div>
         <span style={{ fontWeight: 'bold' }}>{configName}</span>
       </div>
-      <div className="flex mg-top-xs remark-word">
+      <div className="flex items-center mg-top-xs remark-word">
         <span className="mg-right-xs">Description:</span>
         <span>{description}</span>
       </div>
-      <div className="flex mg-top-xs remark-word">
+      <div className="flex items-center mg-top-xs remark-word">
         <span className="mg-right-xs">Level:</span>
         <span>{level}</span>
       </div>
-      <div className="flex mg-top-xs remark-word">
+      <div className="flex items-center mg-top-xs remark-word">
         <span className="mg-right-xs">Xpath:</span>
         <span>{xpath}</span>
       </div>

@@ -1,4 +1,4 @@
-import TapUpgradeMain from 'pages/tap-upgrade/TapUpgradeMain';
+import DeployTicketMain from 'pages/tap-deploy-ticket/DeployTicketMain';
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from 'store/store';
@@ -10,7 +10,8 @@ const App: React.FC = () => {
       <div className="App-container">
         {/* <ChangeInitial /> */}
         {/* <ChangeMain /> */}
-        <TapUpgradeMain />
+        {/* <TapUpgradeMain /> */}
+        <DeployTicketMain />
       </div>
     </Provider>
   );
