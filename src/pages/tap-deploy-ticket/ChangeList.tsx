@@ -1,4 +1,5 @@
-import { Form } from 'antd';
+import { EyeOutlined, FileAddOutlined } from '@ant-design/icons';
+import { Button, Form } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import React from 'react';
 import PreviewChangeXml from './PreviewChangeXml';
@@ -26,6 +27,10 @@ const ChangeList: React.FC = () => {
           autoSize={{ minRows: 8 }}
         />
       </Form.Item>
+      <div className="flex-col button-group">
+        <Button icon={<FileAddOutlined />} className='mb-3'>Add Change Item</Button>
+        <Button icon={<EyeOutlined />}>Preview</Button>
+      </div>
     </Form>
     <PreviewChangeXml />
   </div>

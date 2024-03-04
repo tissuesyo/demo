@@ -1,5 +1,5 @@
 import { CopyOutlined, FileDoneOutlined, LinkOutlined, ReloadOutlined, RocketOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Button, Collapse, CollapseProps, theme } from 'antd';
+import { Button, Collapse, CollapseProps, Input, theme } from 'antd';
 import React from 'react';
 import ChangeList from './ChangeList';
 import ToolCriteria from './ToolCriteria';
@@ -23,8 +23,8 @@ const DeployTicketMain: React.FC = () => {
   return (
     <>
     <div className="flex flex-col py-2 px-4">
-      <div>
-        <div>Title</div>
+      <div className='mb-3'>
+        <div><Input placeholder="Please input title" /></div>
       </div>
       <div className="button-group">
         <Button icon={<FileDoneOutlined />}>Submit</Button>
