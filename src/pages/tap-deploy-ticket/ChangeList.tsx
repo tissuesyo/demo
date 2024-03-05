@@ -1,14 +1,24 @@
 import { EyeOutlined, FileAddOutlined } from '@ant-design/icons';
-import { Button, Form } from 'antd';
+import { Button, Drawer, Form, Space } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
-import React from 'react';
+import React, { useState } from 'react';
+import ConfigModifier from './ConfigModifier';
 import PreviewChangeXml from './PreviewChangeXml';
 
 const ChangeList: React.FC = () => {
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     console.log(values);
+  };
+
+  const openDrawer = () => {
+    setIsOpenDrawer(true);
+  };
+
+  const closeDrawer = () => {
+    setIsOpenDrawer(false);
   };
 
   return (
@@ -28,11 +38,32 @@ const ChangeList: React.FC = () => {
         />
       </Form.Item>
       <div className="flex-col button-group">
-        <Button icon={<FileAddOutlined />} className='mb-3'>Add Change Item</Button>
+        <Button icon={<FileAddOutlined />} className='mb-3' onClick={openDrawer}>Add Change Item</Button>
         <Button icon={<EyeOutlined />}>Preview</Button>
       </div>
     </Form>
     <PreviewChangeXml />
+
+    <Drawer
+      title="Tool.xml Configuration Editor"
+      width={720}
+      onClose={openDrawer}
+      open={isOpenDrawer}
+      styles={{
+        body: {
+          paddingBottom: 80,
+        },
+      }}
+      extra={
+        <Space>
+          <Button onClick={closeDrawer}>
+            Add
+          </Button>
+        </Space>
+      }
+    >
+      <ConfigModifier />
+    </Drawer>
   </div>
   );
 };
