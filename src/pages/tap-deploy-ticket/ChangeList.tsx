@@ -46,12 +46,12 @@ const ChangeList: React.FC = () => {
 
     <Drawer
       title="Tool.xml Configuration Editor"
-      width={720}
-      onClose={openDrawer}
+      width={600}
+      onClose={closeDrawer}
       open={isOpenDrawer}
       styles={{
         body: {
-          paddingBottom: 80,
+          paddingBottom: 20,
         },
       }}
       extra={

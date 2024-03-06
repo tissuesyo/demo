@@ -1,10 +1,11 @@
 import { CopyOutlined, FileDoneOutlined, LinkOutlined, ReloadOutlined, RocketOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Button, Collapse, CollapseProps, Input, theme } from 'antd';
-import React from 'react';
+import { Button, Collapse, CollapseProps, Input, Switch, theme } from 'antd';
+import React, { useState } from 'react';
 import ChangeList from './ChangeList';
 import ToolCriteria from './ToolCriteria';
 
 const DeployTicketMain: React.FC = () => {
+  const [isCreateMode, setDisplayMode] = useState('Create');
   const { token } = theme.useToken();
   const collapseItems: CollapseProps['items'] = [
     {
@@ -17,8 +18,11 @@ const DeployTicketMain: React.FC = () => {
       label: 'Change Summary',
       children: <ChangeList />,
     }
-    
   ];
+
+  const changeDisplayMode = (isCreateMode: boolean) => {
+    setDisplayMode(isCreateMode ? 'Create' : 'Edit');
+  };
 
   return (
     <>
@@ -29,11 +33,15 @@ const DeployTicketMain: React.FC = () => {
       <div className="button-group">
         <Button icon={<FileDoneOutlined />}>Submit</Button>
         {/* <Button type="primary" icon={<FileDoneOutlined />}>Submit</Button> */}
+        {
+
+        }
         <Button icon={<RocketOutlined />}>Deploy</Button>
         <Button icon={<ReloadOutlined />}>Rollback</Button>        
         <Button icon={<CopyOutlined />}>Clone</Button>
         <Button icon={<UserAddOutlined />}>Assign</Button>
         <Button icon={<LinkOutlined />}>Copy Case URL</Button>
+        <Switch checkedChildren="Create" unCheckedChildren="Edit" defaultChecked onChange={changeDisplayMode}/>
       </div>
       <div className="my-3">
         <Collapse defaultActiveKey={['1', '2']} ghost items={collapseItems} />
