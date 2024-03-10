@@ -1,15 +1,17 @@
-import { Form, Select } from 'antd';
+import { transferDsOptions } from '@tmc/utils/formatUtil';
+import { Form, Row, Select } from 'antd';
+import { FAB_RESP, TOOL_GRP_RESP, TOOL_ID_RESP, TOOL_TYPE_RESP } from 'const/response-const';
 import React from 'react';
 
-const ToolCriteria: React.FC = () => {
-  const layout = {
-    // labelCol: { span: 2 },
-    // wrapperCol: { span: 6 },
-  };
-  
+const ToolCriteria: React.FC = () => {  
   const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
   };
+
+  const fabDs = transferDsOptions(FAB_RESP);
+  const toolDs = transferDsOptions(TOOL_ID_RESP);
+  const toolTypeDs = transferDsOptions(TOOL_TYPE_RESP);
+  const toolGrpDs = transferDsOptions(TOOL_GRP_RESP);
 
   const [form] = Form.useForm();
 
@@ -42,73 +44,67 @@ const ToolCriteria: React.FC = () => {
 
   return (
     <Form
-    {...layout}
-    form={form}
-    name="control-hooks"
-    onFinish={onFinish}
-    labelAlign="left"
-    className='flex'
-    // style={{ maxWidth: 600 }}
-  >
-      <Form.Item name="fabName" label="Fab" rules={[{ required: true }]} className='w-40 mr-4'>
-        <Select
-          placeholder="Select Fab"
-          onChange={onGenderChange}
-          allowClear
-          options={[
-            { value: 'F12A', label: 'F12A' },
-            { value: 'F12B', label: 'F12B' },
-            { value: 'F14A', label: 'F14A' }
-          ]}
-        >
-        </Select>
-    </Form.Item>
+      layout='vertical'
+      form={form}
+      name="control-hooks"
+      onFinish={onFinish}
+      className='flex'
+    >
+    <Row>
+      <Form.Item name="fabName" label="Fab" rules={[{ required: true }]} className='w-60 mr-4' >
+          <Select
+            placeholder="Select Fab"
+            onChange={onGenderChange}
+            allowClear
+            options={fabDs}
+          >
+          </Select>
+      </Form.Item>
 
       <Form.Item name="toolType" label="Tool Type" rules={[{ required: true }]} className='w-80 mr-4'>
         <Select
           placeholder="Select Tool Type"
           onChange={onGenderChange}
           allowClear
-          options={[
-            { value: 'AMAT_Producer-SE', label: 'AMAT_Producer-SE' },
-            { value: 'AMAT_Producer-SF', label: 'AMAT_Producer-SF' },
-            { value: 'AMAT_Producer-GG', label: 'AMAT_Producer-GG' }
-          ]}
+          options={toolTypeDs}
         >
         </Select>
       </Form.Item>
 
-    <Form.Item name="toolGroup" label="Tool Group" rules={[{ required: true }]} className='w-80 mr-4'>
-      <Select
-        placeholder="Select Tool Group"
-        onChange={onGenderChange}
-        allowClear
-        options={[
-          { value: 'F14A AA-BB', label: 'F14A AA-BB' },
-          { value: 'F14A AA-CC', label: 'F14A AA-CC' },
-          { value: 'F14A AA-DD', label: 'F14A AA-DD' }
-        ]}
-      >
-      </Select>
-    </Form.Item>
-    <Form.Item name="toolId" label="Tool ID" rules={[{ required: true }]} className='w-56 mr-4'>
+      <Form.Item name="toolGroup" label="Tool Group" rules={[{ required: true }]} className='w-80 mr-4'>
+        <Select
+          placeholder="Select Tool Group"
+          onChange={onGenderChange}
+          allowClear
+          style={{ minWidth: '220px' }}
+          options={toolGrpDs}
+        >
+          
+        </Select>
+      </Form.Item>
+
+      <Form.Item name="toolId" label="Tool ID" rules={[{ required: true }]} className='w-56 mr-4'>
+        <Select
+          placeholder="Select Tool ID"
+          onChange={onGenderChange}
+          allowClear
+          style={{ minWidth: '200px' }}
+          options={toolDs}
+        >
+        </Select>
+      </Form.Item>
+    </Row>
+
+    <Form.Item name="description" label="Description" rules={[{ required: true }]} className='w-56 mr-4'>
       <Select
         placeholder="Select Tool ID"
         onChange={onGenderChange}
         allowClear
-        options={[
-          { value: 'TOOLAA', label: 'TOOLAA' },
-          { value: 'TOOLBB', label: 'TOOLBB' },
-          { value: 'TOOLCC', label: 'TOOLCC' }
-        ]}
+        style={{ minWidth: '200px' }}
+        options={toolDs}
       >
       </Select>
     </Form.Item>
-    {/* <Form.Item {...tailLayout}>
-      <Space>
-        <Button>Load XML</Button>
-      </Space>
-    </Form.Item> */}
   </Form>
   );
 };

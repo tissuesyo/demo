@@ -1,6 +1,7 @@
 export const FAB_RESP = ['FAB12', 'FAB14A', 'FAB14B'];
-
 export const TOOL_ID_RESP = ['ABCD11', 'ABCD22', 'ABCD33'];
+export const TOOL_TYPE_RESP = ['AMAT_Producer-SE', 'AMAT_Producer-SF', 'AMAT_Producer-GG'];
+export const TOOL_GRP_RESP = [ 'F14A AA-BB', 'F14A AA-CC', 'F14A AA-DD' ];
 
 export const CHOOSE_TOOLS_RESP = {
   fab: 'FAB12',

@@ -1,6 +1,7 @@
 import { CopyOutlined, FileDoneOutlined, LinkOutlined, ReloadOutlined, RocketOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Button, Input, Switch, Tabs, theme } from 'antd';
 import React, { useState } from 'react';
+import JobStatus from './JobStatus';
 import ToolCriteria from './ToolCriteria';
 
 const DeployTicketMain: React.FC = () => {
@@ -11,6 +12,11 @@ const DeployTicketMain: React.FC = () => {
       label: 'Change Information',
       key: 'changeList',
       children: <ToolCriteria />,
+    },
+    {
+      label: 'Job Status',
+      key: 'jobStatus',
+      children: <JobStatus />,
     }
   ]
 
