@@ -16,3 +16,42 @@ export const CHG_ACTION_MODE_DS = [
   { label: 'Insert', value: 'Insert' },
   { label: 'Remove', value: 'Remove' },
 ];
+
+export const getJobStatusColDef = ({ statusRender, actionRender }: any) => [
+  {
+    title: 'No',
+    dataIndex: 'index',
+    key: 'index',
+  },
+  {
+    title: 'Job Name',
+    dataIndex: 'jobName',
+    key: 'jobName',
+  },
+  {
+    title: 'Start Time',
+    dataIndex: 'startTime',
+    key: 'startTime',
+  },
+  {
+    title: 'End Time',
+    dataIndex: 'endTime',
+    key: 'endTime',
+  },
+  {
+    title: 'Job Status',
+    key: 'status',
+    dataIndex: 'status',
+    render: statusRender,
+  },
+  {
+    title: 'Message',
+    dataIndex: 'message',
+    key: 'message',
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    render: actionRender,
+  },
+];

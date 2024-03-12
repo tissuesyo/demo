@@ -1,7 +1,7 @@
 export const FAB_RESP = ['FAB12', 'FAB14A', 'FAB14B'];
 export const TOOL_ID_RESP = ['ABCD11', 'ABCD22', 'ABCD33'];
 export const TOOL_TYPE_RESP = ['AMAT_Producer-SE', 'AMAT_Producer-SF', 'AMAT_Producer-GG'];
-export const TOOL_GRP_RESP = [ 'F14A AA-BB', 'F14A AA-CC', 'F14A AA-DD' ];
+export const TOOL_GRP_RESP = ['F14A AA-BB', 'F14A AA-CC', 'F14A AA-DD'];
 
 export const CHOOSE_TOOLS_RESP = {
   fab: 'FAB12',
@@ -139,3 +139,35 @@ export const CONFIG_XML_DIFF_RESP = {
   </library>
 `,
 };
+
+export const CHG_JOB_STATUS_RESP = [
+  {
+    index: 1,
+    jobName: 'OOXX',
+    startTime: '2024/01/01 11:08:00',
+    endTime: '2024/01/01 11:10:00',
+    status: 'Success',
+  },
+  {
+    index: 2,
+    jobName: 'XXOO',
+    startTime: '2024/01/01 12:08:00',
+    endTime: '2024/01/01 12:10:30',
+    status: 'Fail',
+    message: 'fail.... because ooxx...',
+  },
+  {
+    index: 3,
+    jobName: 'XXOO',
+    startTime: '2024/01/01 12:30:00',
+    endTime: '2024/01/01 12:40:20',
+    status: 'Pending',
+  },
+  {
+    index: 4,
+    jobName: 'AAA XXOO',
+    startTime: '2024/01/01 12:40:30',
+    endTime: '2024/01/01 12:40:50',
+    status: 'Ongoing',
+  },
+];
