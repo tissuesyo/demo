@@ -2,6 +2,7 @@ import { CopyOutlined, FileDoneOutlined, LinkOutlined, ReloadOutlined, RocketOut
 import { Button, Input, Switch, Tabs, theme } from 'antd';
 import React, { useState } from 'react';
 import JobStatus from './JobStatus';
+import MyComponent from './MyComponent';
 import ToolCriteria from './ToolCriteria';
 
 const DeployTicketMain: React.FC = () => {
@@ -52,6 +53,7 @@ const DeployTicketMain: React.FC = () => {
         <ChangeList /> */}
         <Tabs type="card" items={tabs}/>
       </div>
+      <MyComponent />
     </div>
     </>
   );

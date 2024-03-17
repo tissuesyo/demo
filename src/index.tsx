@@ -6,6 +6,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 if (process.env.NODE_ENV === "development") {
+  console.log(' ***** worker start ***** ');
   worker.start();
 }
 
