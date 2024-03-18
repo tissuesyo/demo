@@ -50,8 +50,9 @@ const CommonForm: React.FC<CommonFormProps> = ({ fields, forwardedRef }) => {
           wrapperCol={{ span: field.width || 16 }}
           colon={false}
           rules={field.validationRules}
+          hidden={field.dependencies ? (form.getFieldValue(field.dependencies[0]) === 'yoyoyo'):  false}
           dependencies={field.dependencies}
-          shouldUpdate={(prevValues, currentValues) => {
+          shouldUpdate={(prevValues: any, currentValues: any) => {
             const prevValue = field.dependencies?.reduce<Record<string, any>>(
               (acc, key) => ({ ...acc, [key]: prevValues[key] }),
               {}

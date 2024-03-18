@@ -3,6 +3,7 @@ import { Button, Input, Switch, Tabs, theme } from 'antd';
 import React, { useState } from 'react';
 import JobStatus from './JobStatus';
 import MyComponent from './MyComponent';
+import ParentComponent from './ParentComponent';
 import ToolCriteria from './ToolCriteria';
 
 const DeployTicketMain: React.FC = () => {
@@ -54,6 +55,7 @@ const DeployTicketMain: React.FC = () => {
         <Tabs type="card" items={tabs}/>
       </div>
       <MyComponent />
+      <ParentComponent />
     </div>
     </>
   );

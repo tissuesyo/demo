@@ -1,6 +1,6 @@
-import CommonForm, { FormField } from '@tmc/components/form/CommonForm';
 import { FormInstance } from 'antd/lib/form';
 import React, { useEffect, useRef, useState } from 'react';
+import CommonForm, { FormField } from '../../components/form/CommonForm';
 
 const ParentComponent: React.FC = () => {
   const commonFormRef = useRef<FormInstance>(null);
@@ -14,7 +14,7 @@ const ParentComponent: React.FC = () => {
   // 父组件提供的表单字段定义
   const fields: FormField[] = [
     { name: 'name', label: 'Name', type: 'input', labelWidth: 100, width: 200, required: true, validationRules: [{ required: true, message: 'Please input your name' }] },
-    { name: 'age', label: 'Age', type: 'input', labelWidth: 100, width: 200, validationRules: [{ required: true, message: 'Please input your age' }] },
+    { name: 'age', label: 'Age', type: 'input', labelWidth: 100, width: 200, validationRules: [{ required: true, message: 'Please input your age' }], dependencies: ['name'] },
     { name: 'description', label: 'Description', type: 'textarea', labelWidth: 100, width: 400 },
     { name: 'agree', label: 'Agree', type: 'checkbox', labelWidth: 100 },
     { name: 'country', label: 'Country', type: 'select', labelWidth: 100, width: 200, options: [{ label: 'USA', value: 'usa' }, { label: 'Canada', value: 'canada' }] },
@@ -44,7 +44,7 @@ const ParentComponent: React.FC = () => {
     fieldNames.forEach(fieldName => {
       const fieldIndex = updatedFields.findIndex(field => field.name === fieldName);
       if (fieldIndex !== -1) {
-        updatedFields[fieldIndex] = { ...updatedFields[fieldIndex], hideWhen: visible ? null : () => true };
+        updatedFields[fieldIndex] = { ...updatedFields[fieldIndex], hideWhen: visible ? ()=> false : () => true };
       }
     });
     setFields(updatedFields);

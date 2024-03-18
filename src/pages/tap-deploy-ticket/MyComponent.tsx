@@ -1,6 +1,7 @@
 import { Button, FormInstance } from 'antd';
 import React, { useEffect, useMemo, useRef } from 'react';
 import { CommonForm } from '../../components/form';
+import { FormField } from '../../components/form/CommonForm';
 
 const MyComponent: React.FC = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const MyComponent: React.FC = () => {
     console.log(' ***** My Component useEffect ******');
   }, []); // 传递空数组以确保方法只执行一次
 
-  const fields = useMemo(() => {
+  const fields = useMemo<FormField[]>(() => {
     console.log(' ***** My Component useMemo ******');
     return [
       {
