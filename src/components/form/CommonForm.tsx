@@ -52,20 +52,6 @@ const CommonForm: React.FC<CommonFormProps> = ({ fields, forwardedRef }) => {
           rules={field.validationRules}
           hidden={field.dependencies ? (form.getFieldValue(field.dependencies[0]) === 'yoyoyo'):  false}
           dependencies={field.dependencies}
-          shouldUpdate={(prevValues: any, currentValues: any) => {
-            const prevValue = field.dependencies?.reduce<Record<string, any>>(
-              (acc, key) => ({ ...acc, [key]: prevValues[key] }),
-              {}
-            ) || {};
-            const currentValue = field.dependencies?.reduce<Record<string, any>>(
-              (acc, key) => ({ ...acc, [key]: currentValues[key] }),
-              {}
-            ) || {};
-            return (
-              JSON.stringify(prevValue) !== JSON.stringify(currentValue)
-            );
-          }}
-          noStyle={field.hideWhen && field.hideWhen(formValues)}
         >
           {renderField(field)}
         </Form.Item>
