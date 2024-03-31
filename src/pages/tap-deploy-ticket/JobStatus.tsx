@@ -1,7 +1,9 @@
+import { CommonTable } from '@tmc/components/table';
 import type { TableProps } from 'antd';
-import { Button, Space, Table, Tag } from 'antd';
+import { Button, Space, Tag } from 'antd';
 import React from 'react';
 import { CHG_JOB_STATUS_RESP } from '../../const/response-const';
+import { JOB_STATUS_COLUMNS } from './const/table-const';
 import { getJobStatusColDef } from './const/ticket-const';
 import { ChgJobStatus } from './model/ChgJobStatus';
 
@@ -30,8 +32,14 @@ const columns: TableProps<ChgJobStatus>['columns'] = [
   }})
 ];
 
-const data: ChgJobStatus[] = CHG_JOB_STATUS_RESP;
+const rowData: ChgJobStatus[] = CHG_JOB_STATUS_RESP;
 
-const JobStatus: React.FC = () => <Table columns={columns} dataSource={data} pagination={false} />;
+const JobStatus: React.FC = () => 
+<CommonTable
+  rowData={rowData}
+  columnDefs={JOB_STATUS_COLUMNS}
+  tableStyle={{ width: '100%', height: 'calc(100vh - 250px)' }}
+  rowSelection="single"
+></CommonTable>;
 
 export default JobStatus;
